@@ -38,8 +38,17 @@ class SetUsername extends React.Component{
     return(
       <div style={ this.baseStyle}>
       <form onSubmit={this.onSubmit.bind(this)}>
-        <input ref='newUsername' type='text' placeholder='What is your name?'/>
-        <input type='submit' value='register'/>
+      <div style={{float: 'left', padding: 10}}>
+        <textarea
+          ref='newUsername'
+          type='text'
+          placeholder='What is your name?'
+          style={{ display: "block"}}>
+        </textarea>
+        </div>
+        <div style={{float: 'left', padding: 10}}>
+        <RaisedButton type="submit" label="Register" />
+        </div>
       </form>
       </div>
     )
