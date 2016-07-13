@@ -1,11 +1,52 @@
 import React from 'react';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Utils from './lib/Utils';
+import Header from './containers/header';
+import Channel from './containers/channel';
+import MessageInput from './containers/message-input';
+import SetUsername from './containers/set-username';
+
 class App extends React.Component {
-    render() {
-        return (
-            <h1>Hello World!</h1>
-        );
-    }
+  constructor() {
+    super();
+
+    this.utils = new Utils();
+    let currentUser = this.utils.store("chat.currentUser");
+
+    if (currentUser.length === 0) { currentUser = "guest"; }
+    console.log(currentUser);
+
+    this.state = {
+      messages: [],
+      currentUser: currentUser
+    };
+  }
+
+  setUsername(newUsername) {
+    this.utils.store("chat.currentUser", newUsername);
+
+    this.setState({
+      currentUser: newUsername
+    });
+  }
+
+  render() {
+    return (
+      <MuiThemeProvider>
+        <div style={{paddingTop: 100, paddingBottom: 60}}>
+          <Header appName="CURIOUS CHATTERS" />
+          <SetUsername
+            username={ this.state.currentUser }
+            onChange={ this.setUsername.bind(this) } />
+
+          <Channel messages={ this.state.messages } />
+          <MessageInput username={ this.state.currentUser } />
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
+
 
 export default App;
