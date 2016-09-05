@@ -1,6 +1,12 @@
-# React Starter
+# Chat React App
+An assignment about building a basic chat app. 
 
-## Installation
+[Chat App](http://curious-chatters.bitballoon.com/)
+
+### Extra
+Changed the look with Material UI. I made sure that every input from users where in "cards" (in a box). To clearly indicate each post. 
+
+### React Starter - Installation
 
 ```bash
 npm install
