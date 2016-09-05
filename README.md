@@ -1,4 +1,4 @@
-# Chat React App
+# Basic Chat App
 An assignment about building a basic chat app. 
 
 [Chat App](http://curious-chatters.bitballoon.com/)
