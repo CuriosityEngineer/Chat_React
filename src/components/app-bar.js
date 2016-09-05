@@ -9,7 +9,7 @@ class AppBar extends React.Component{
     super(props);
 
     this.baseStyle = _.merge({
-      backgroundImage: "url('https://i.imgsafe.org/541e8d6e28.jpg')",
+      backgroundImage: "url('https://s26.postimg.io/i4xvw6pu1/12_small01.jpg')",
       color: ColorSet.lightGrey,
       textAlign:'center',
       fontFamiliy: Fonts.sansSerif,
